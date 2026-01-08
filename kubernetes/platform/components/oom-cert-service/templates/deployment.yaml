@@ -24,10 +24,10 @@ spec:
     metadata: {{- include "common.templateMetadata" . | nindent 6 }}
       {{- if (include "common.onServiceMesh" . ) }}
       annotations:
-      {{- if eq ( .Values.global.serviceMesh.engine ) "linkerd" }}
+      {{- if and .Values.global.serviceMesh (eq .Values.global.serviceMesh.engine "linkerd") }}
         linkerd.io/inject: disabled
       {{- end }}
-      {{- if eq ( .Values.global.serviceMesh.engine ) "istio" }}
+      {{- if and .Values.global.serviceMesh (eq .Values.global.serviceMesh.engine "istio") }}
           traffic.sidecar.istio.io/excludeInboundPorts: "8080,8443"
           traffic.sidecar.istio.io/includeInboundPorts: '*'
       {{- end }}
