@@ -22,7 +22,7 @@
 
 echo "Create '${SDNRDBDATABASE}' and user '${SDNRDBUSERNAME}' within maria-galera database cluster"
 root_user=root
-mysql -v -v -u $root_user -p${MYSQL_ROOT_PASSWORD} -Bse "\
+/usr/bin/mariadb -v -v -u $root_user -p${MYSQL_ROOT_PASSWORD} "${SDNC_DB_EXTRA_PARAMETERS}" -Bse "\
 CREATE DATABASE IF NOT EXISTS ${SDNRDBDATABASE}; \
 CREATE USER IF NOT EXISTS ${SDNRDBUSERNAME}@'%' IDENTIFIED BY '${SDNRDBPASSWORD}'; \
 GRANT ALL PRIVILEGES ON ${SDNRDBDATABASE}.* TO '${SDNRDBUSERNAME}'@'%'; \
