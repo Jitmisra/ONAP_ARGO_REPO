@@ -21,7 +21,7 @@ global:
   # TNAP: had to set it to False, as otherwise a setting is required:
   # .Values.base.validationCABundle
   configValidation: false
-  #hub: "<DOCKER_REPO>/istio"
+  #hub: "docker.io/istio"
   proxy:
     holdApplicationUntilProxyStarts: true
 

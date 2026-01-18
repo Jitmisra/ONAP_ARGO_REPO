@@ -18,7 +18,7 @@
 
 defectDojoApiCredentials:
   apiKey: "<DEFECTDOJO_API_KEY"
-  url: "https://defectdojo<POSTADDR>.<BASEURL>"
+  url: "https://defectdojo.hpe15.anuket.iol.unh.edu"
 
 operator:
   trivyDojoReportOperator:

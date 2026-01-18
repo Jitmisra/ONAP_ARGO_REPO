@@ -24,12 +24,12 @@ global:
   ingress:
     enabled: false
     post_addr: &postrAddr ""
-    dns_zone: &dnsZone "<BASEURL>"
+    dns_zone: &dnsZone "hpe15.anuket.iol.unh.edu"
   serviceMesh:
     enabled: false
   renderPullSecrets: True
-  defaultStorageClass: <STORAGECLASS>
-  storageClass: <STORAGECLASS>
+  defaultStorageClass: storage-local-static-provisioner
+  storageClass: storage-local-static-provisioner
 ingress:
   host: to-be-changed
 
@@ -39,7 +39,7 @@ serviceMesh:
   envVariable:
     SERVICE_MESH_ENABLED: True
   sidecarKiller:
-    image: <ONAP_REPO>/onap/oom/readiness:4.2.0
+    image: nexus3.onap.org:10001/onap/oom/readiness:4.2.0
 
 imagePullSecrets:
   - name: onap-docker-registry-key
@@ -55,7 +55,7 @@ tests:
   testEnvName: ""
   configuration:
     pythonsdk-tests/smoke-test:
-      uri: <ONAP_ARGO_REPO_URL>
+      uri: https://github.com/Jitmisra/ONAP_ARGO_REPO
       path: /argo/onap-test/testkube/pythonsdk-tests
       branch: main
       secretName: testkube-git-creds
@@ -129,14 +129,14 @@ tests:
       testName: policy-framework
   smokeTests:
     artifacts:
-      storageClassName: <STORAGECLASS>
+      storageClassName: storage-local-static-provisioner
     execution:
       activeDeadlineSeconds: 1800
     executor:
       pythonsdk:
         name: pythonsdk-tests-basic-executor
         type: pythonsdk-tests/smoke-test
-        image: <ONAP_REPO>/onap/xtesting-smoke-usecases-pythonsdk:master
+        image: nexus3.onap.org:10001/onap/xtesting-smoke-usecases-pythonsdk:master
       controlPanelSdk:
         name: control-panel-basic-executor
         type: controlpanel-sdk/smoke-test
@@ -157,7 +157,7 @@ tests:
 
 testkube:
   testkube-dashboard:
-    apiServerEndpoint: "https://testkube-api<POSTADDR>.<BASEURL>"
+    apiServerEndpoint: "https://testkube-api.hpe15.anuket.iol.unh.edu"
     securityContext:
       allowPrivilegeEscalation: false
       capabilities:
@@ -187,7 +187,7 @@ testkube:
       sidecar.istio.io/inject: "false"
   testkube-api:
     image:
-      registry: <DOCKER_REPO>
+      registry: docker.io
     analyticsEnabled: false
     minio:
       securityContext:
@@ -208,9 +208,9 @@ testkube:
         runAsUser: 100
         seccompProfile:
           type: RuntimeDefault
-      storageClassName: <STORAGECLASS>
+      storageClassName: storage-local-static-provisioner
       image:
-        registry: <DOCKER_REPO>
+        registry: docker.io
     nats:
       uri: nats://testkube-nats
       storage: "30Gi"
@@ -243,19 +243,19 @@ testkube:
           sidecar.istio.io/inject: "false"
           security-scan: "off"
         image:
-          registry: <DOCKER_REPO>
+          registry: docker.io
       migrate:
         image:
-          registry: <DOCKER_REPO>
+          registry: docker.io
     preUpgrade:
       image:
-        registry: <DOCKER_REPO>
+        registry: docker.io
       labels:
         sidecar.istio.io/inject: "false"
         security-scan: "off"
     proxy:
       image:
-        registry: <GOOGLE_REPO>
+        registry: gcr.io
     resources:
       limits:
         cpu: 400m
@@ -277,9 +277,9 @@ testkube:
       seccompProfile:
         type: RuntimeDefault
   mongodb:
-    storageClass: <STORAGECLASS>
+    storageClass: storage-local-static-provisioner
     image:
-      registry: <DOCKER_REPO>
+      registry: docker.io
     readinessProbe:
       timeoutSeconds: 50
     livenessProbe:
@@ -302,13 +302,13 @@ testkube:
       jetstream:
         fileStore:
           pvc:
-            storageClassName: <STORAGECLASS>
+            storageClassName: storage-local-static-provisioner
       resolver:
         pvc:
-          storageClassName: <STORAGECLASS>
+          storageClassName: storage-local-static-provisioner
     container:
       image:
-        registry: <DOCKER_REPO>
+        registry: docker.io
     podTemplate:
       merge:
         spec:
@@ -318,7 +318,7 @@ testkube:
     natsBox:
       container:
         image:
-          registry: <DOCKER_REPO>
+          registry: docker.io
         merge:
           resources:
             limits:
@@ -362,7 +362,7 @@ testkube:
                 type: RuntimeDefault
     reloader:
       image:
-        registry: <DOCKER_REPO>
+        registry: docker.io
       merge:
         securityContext:
           allowPrivilegeEscalation: false

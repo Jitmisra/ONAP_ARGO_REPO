@@ -17,8 +17,8 @@
 # ============LICENSE_END=========================================================
 
 global:
-  defaultStorageClass: <STORAGECLASS>
-  imageRegistry: <DOCKER_REPO>
+  defaultStorageClass: storage-local-static-provisioner
+  imageRegistry: docker.io
   security:
     allowInsecureImages: true
   postgresql:

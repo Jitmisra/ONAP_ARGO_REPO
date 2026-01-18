@@ -28,11 +28,11 @@ metadata:
 spec:
   project: argo-management
   sources:
-  - repoURL: '<ONAP_ARGO_REPO_URL>'
-    targetRevision: <ONAP_ARGO_BRANCH>
+  - repoURL: 'https://github.com/Jitmisra/ONAP_ARGO_REPO'
+    targetRevision: main
     ref: defaultValues
-  - repoURL: <ONAP_ARGO_REPO_URL>
-    targetRevision: <ONAP_ARGO_BRANCH>
+  - repoURL: https://github.com/Jitmisra/ONAP_ARGO_REPO
+    targetRevision: main
     path: ./argo/onap-test/ingress-routes/helm
     helm:
       ignoreMissingValueFiles: true

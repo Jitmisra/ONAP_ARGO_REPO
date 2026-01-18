@@ -57,7 +57,7 @@ operator:
   builtInServerRegistryInsecure: false
 
 image:
-  registry: <DOCKER_REPO>
+  registry: docker.io
 trivyOperator:
   # scraper job is annotated with 'testkube' label
   skipResourceByLabels: "testkube,app.kubernetes.io/instance=testkube,argocd.argoproj.io/instance=testkube,security-scan=off"

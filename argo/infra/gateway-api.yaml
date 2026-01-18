@@ -28,8 +28,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: '<ONAP_ARGO_REPO_URL>'
-    targetRevision: <ONAP_ARGO_BRANCH>
+    repoURL: 'https://github.com/Jitmisra/ONAP_ARGO_REPO'
+    targetRevision: main
     path: argo/infra/gateway-api
   destination:
     server: https://kubernetes.default.svc

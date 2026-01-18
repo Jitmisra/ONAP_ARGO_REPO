@@ -16,5 +16,5 @@
 #  SPDX-License-Identifier: Apache-2.0
 # ============LICENSE_END=========================================================
 
-post_addr: "<POSTADDR>"
-dns_zone: "<BASEURL>"
+post_addr: ""
+dns_zone: "hpe15.anuket.iol.unh.edu"

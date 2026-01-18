@@ -17,7 +17,7 @@
 # ============LICENSE_END=========================================================
 
 global:
-  defaultStorageClass: <STORAGECLASS>
+  defaultStorageClass: storage-local-static-provisioner
 
 # Global settings
 # create defectdojo specific secret
@@ -33,7 +33,7 @@ createPostgresqlHaPgpoolSecret: false
 # Primary hostname of instance
 host: defectdojo-django.defectdojo
 alternativeHosts:
-  - defectdojo<POSTADDR>.<BASEURL>
+  - defectdojo.hpe15.anuket.iol.unh.edu
 admin:
   user: admin
   password: gating

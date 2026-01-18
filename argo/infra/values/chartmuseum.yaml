@@ -37,6 +37,6 @@ env:
     DEBUG: true
 
 persistence:
-  storageClass: <STORAGECLASS>
+  storageClass: storage-local-static-provisioner
   enabled: true
   size: 8Gi

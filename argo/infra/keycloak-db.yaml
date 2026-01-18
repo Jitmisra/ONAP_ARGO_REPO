@@ -28,8 +28,8 @@ metadata:
 spec:
   project: default
   sources:
-  - repoURL: '<ONAP_ARGO_REPO_URL>'
-    targetRevision: <ONAP_ARGO_BRANCH>
+  - repoURL: 'https://github.com/Jitmisra/ONAP_ARGO_REPO'
+    targetRevision: main
     ref: defaultValues
   - repoURL: 'registry-1.docker.io/bitnamicharts'
     path: 'postgresql'

@@ -25,7 +25,7 @@ spec:
   imagePullSecrets:
     {{- toYaml . | nindent 4 }}
   {{- end }}
-  image: <ONAP_REPO>/onap/control-panel-ui-smoke-tests/controlpanel-smoke-tests:{{ .Values.tests.smokeTests.executor.controlPanelSdk.imageVersion }}
+  image: nexus3.onap.org:10001/onap/control-panel-ui-smoke-tests/controlpanel-smoke-tests:{{ .Values.tests.smokeTests.executor.controlPanelSdk.imageVersion }}
   command:
     - "/bin/bash"
     - "-c"

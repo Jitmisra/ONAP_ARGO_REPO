@@ -48,7 +48,7 @@ spec:
   external_services:
     grafana:
       internal_url: "http://prometheus-grafana.prometheus"
-      url: "https://grafana<POSTADDR>.<BASEURL>"
+      url: "https://grafana.hpe15.anuket.iol.unh.edu"
       auth:
         username: "admin"
         password: "prom-operator"
@@ -57,7 +57,7 @@ spec:
       url: "http://prometheus-kube-prometheus-prometheus.prometheus:9090"
     tracing:
       enabled: false
-      external_url: https://jaeger<POSTADDR>.<BASEURL>
+      external_url: https://jaeger.hpe15.anuket.iol.unh.edu
       internal_url: http://jaeger-query.istio-system:16685
       use_grpc: true
     istio:

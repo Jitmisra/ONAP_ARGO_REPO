@@ -30,7 +30,7 @@ configs:
     argocdServerAdminPassword: "argo_admin_password" # override to set ArgoCD admin password
     argocdServerAdminPasswordMtime: "2021-08-03T13:45:00Z"
   cm:
-    url: "https://argocd<POSTADDR>.<BASEURL>"
+    url: "https://argocd.hpe15.anuket.iol.unh.edu"
     statusbadge.enabled: 'true'
     exec.enabled: true
     admin.enabled: true

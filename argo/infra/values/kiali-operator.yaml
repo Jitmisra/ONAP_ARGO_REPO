@@ -20,23 +20,23 @@ global:
   clusterScoped: true
 
 image:
-  registry: <DOCKER_REPO>
-  registryOverride: <DOCKER_REPO>
+  registry: docker.io
+  registryOverride: docker.io
 
 cass-operator:
   image:
-    registry: <DOCKER_REPO>
-    registryOverride: <DOCKER_REPO>
+    registry: docker.io
+    registryOverride: docker.io
   admissionWebhooks:
     enabled: true
 
 cleaner:
   image:
-    registry: <DOCKER_REPO>
+    registry: docker.io
 
 client:
   image:
-    registry: <DOCKER_REPO>
+    registry: docker.io
 
 # -- Allows managing CRD upgrades externally and fully disable the CRD upgrader job hook
 disableCrdUpgraderJob: true

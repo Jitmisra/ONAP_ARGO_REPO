@@ -33,12 +33,12 @@ global:
   nodePortPrefixExt: 304
   masterPassword: gatingPassword
   addTestingComponents: &testing false
-  repository: <ONAP_REPO>
-  dockerHubRepository: &dockerHubRepository <DOCKER_REPO>
-  elasticRepository: &elasticRepository <ELASTIC_REPO>
-  quayRepository: <QUAY_REPO>
-  googleK8sRepository: <K8S_REPO>
-  githubContainerRegistry: <GITHUB_REPO>
+  repository: nexus3.onap.org:10001
+  dockerHubRepository: &dockerHubRepository docker.io
+  elasticRepository: &elasticRepository docker.elastic.co
+  quayRepository: quay.io
+  googleK8sRepository: registry.k8s.io
+  githubContainerRegistry: ghcr.io
   loggingRepository: *elasticRepository
   busyboxRepository: *dockerHubRepository
   repositoryCred:
@@ -90,9 +90,9 @@ global:
     mountPath: /dockerdata-nfs
     enableDefaultStorageclass: false
     parameters: {}
-    storageclassProvisioner: <STORAGECLASS>
+    storageclassProvisioner: storage-local-static-provisioner
     volumeReclaimPolicy: Retain
-    storageClass: "<STORAGECLASS>"
+    storageClass: "storage-local-static-provisioner"
   debugEnabled: false
   passwordStrength: long
 
@@ -120,13 +120,13 @@ global:
     virtualhost:
       # Default Ingress base URL
       # can be overwritten in component by setting ingress.baseurlOverride
-      baseurl: "<BASEURL>"
+      baseurl: "hpe15.anuket.iol.unh.edu"
       # prefix for baseaddr
       # can be overwritten in component by setting ingress.preaddrOverride
       preaddr: ""
       # POSTADDR for baseaddr
       # can be overwritten in component by setting ingress.postaddrOverride
-      postaddr: "<POSTADDR>"
+      postaddr: ""
     config:
       # All http (port 80) requests via ingress will be redirected
       # to port 443 on Ingress controller

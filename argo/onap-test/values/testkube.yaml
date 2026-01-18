@@ -17,16 +17,16 @@
 # ============LICENSE_END=========================================================
 
 global:
-  imageRegistry: <DOCKER_REPO>
+  imageRegistry: docker.io
   imagePullSecrets:
     - artifactory-docker-secret
-  defaultStorageClass: <STORAGECLASS>
-  storageClass: <STORAGECLASS>
+  defaultStorageClass: storage-local-static-provisioner
+  storageClass: storage-local-static-provisioner
   serviceMesh:
     enabled: true
   ingress:
-    post_addr: "<POSTADDR>"
-    dns_zone: "<BASEURL>"
+    post_addr: ""
+    dns_zone: "hpe15.anuket.iol.unh.edu"
 
 serviceMesh:
   envVariable:
@@ -36,10 +36,10 @@ imagePullSecrets:
   - name: artifactory-docker-secret
 
 tests:
-  testEnvName: "<ONAP_ARGO_BRANCH>"
+  testEnvName: "main"
   smokeTests:
     artifacts:
-      storageClassName: <STORAGECLASS>
+      storageClassName: storage-local-static-provisioner
     testsuite:
       name: onap-testsuite
       cron: 0 6 * * *
@@ -79,20 +79,20 @@ tests:
 
 testkube:
   testkube-dashboard:
-    apiServerEndpoint: "https://testkube-api<POSTADDR>.<BASEURL>"
+    apiServerEndpoint: "https://testkube-api.hpe15.anuket.iol.unh.edu"
   testkube-api:
     minio:
-      storageClassName: <STORAGECLASS>
+      storageClassName: storage-local-static-provisioner
       image:
-        registry: <DOCKER_REPO>
+        registry: docker.io
   mongodb:
-    storageClass: <STORAGECLASS>
+    storageClass: storage-local-static-provisioner
   nats:
     config:
       jetstream:
         fileStore:
           pvc:
-            storageClassName: <STORAGECLASS>
+            storageClassName: storage-local-static-provisioner
       resolver:
         pvc:
-          storageClassName: <STORAGECLASS>
+          storageClassName: storage-local-static-provisioner

@@ -53,7 +53,7 @@ extraEnv: |
 dbchecker:
   enabled: true
   image:
-    repository: <DOCKER_REPO>/busybox
+    repository: docker.io/busybox
 
 database:
   vendor: postgres

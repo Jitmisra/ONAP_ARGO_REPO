@@ -31,11 +31,11 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   sources:
-  - repoURL: '<ONAP_ARGO_REPO_URL>'
-    targetRevision: <ONAP_ARGO_BRANCH>
+  - repoURL: 'https://github.com/Jitmisra/ONAP_ARGO_REPO'
+    targetRevision: main
     ref: defaultValues
-  - repoURL: <ONAP_ARGO_REPO_URL>
-    targetRevision: <ONAP_ARGO_BRANCH>
+  - repoURL: https://github.com/Jitmisra/ONAP_ARGO_REPO
+    targetRevision: main
     path: ./argo/onap-test/testkube/helm
     helm:
       # Values file as block file. This takes precedence over values

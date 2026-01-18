@@ -18,4 +18,4 @@
 
 k8ssandraOperator:
   persistence:
-    storageClassName: <STORAGECLASS>
+    storageClassName: storage-local-static-provisioner
