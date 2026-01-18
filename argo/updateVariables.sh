@@ -8,7 +8,7 @@ DIRS=("argocd" "infra" "onap" "onap-test")
 declare -A VARS
 VARS["ONAP_ARGO_REPO_URL"]="https://github.com/Jitmisra/ONAP_ARGO_REPO"
 VARS["ONAP_ARGO_BRANCH"]="main"
-VARS["STORAGECLASS"]="storage-local-static-provisioner"
+VARS["STORAGECLASS"]="nfs"
 VARS["BASEURL"]="hpe15.anuket.iol.unh.edu"
 VARS["POSTADDR"]=""
 VARS["DOCKER_REPO"]="docker.io"
