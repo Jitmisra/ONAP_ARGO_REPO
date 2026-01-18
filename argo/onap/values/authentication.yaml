@@ -18,4 +18,4 @@
 
 global:
   # storageClass for oauth2-proxy setting for Redis DB
-  defaultStorageClass: storage-local-static-provisioner
+  defaultStorageClass: nfs

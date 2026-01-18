@@ -20,8 +20,8 @@ global:
   imageRegistry: docker.io
   imagePullSecrets:
     - artifactory-docker-secret
-  defaultStorageClass: storage-local-static-provisioner
-  storageClass: storage-local-static-provisioner
+  defaultStorageClass: nfs
+  storageClass: nfs
   serviceMesh:
     enabled: true
   ingress:
@@ -39,7 +39,7 @@ tests:
   testEnvName: "main"
   smokeTests:
     artifacts:
-      storageClassName: storage-local-static-provisioner
+      storageClassName: nfs
     testsuite:
       name: onap-testsuite
       cron: 0 6 * * *
@@ -82,17 +82,17 @@ testkube:
     apiServerEndpoint: "https://testkube-api.hpe15.anuket.iol.unh.edu"
   testkube-api:
     minio:
-      storageClassName: storage-local-static-provisioner
+      storageClassName: nfs
       image:
         registry: docker.io
   mongodb:
-    storageClass: storage-local-static-provisioner
+    storageClass: nfs
   nats:
     config:
       jetstream:
         fileStore:
           pvc:
-            storageClassName: storage-local-static-provisioner
+            storageClassName: nfs
       resolver:
         pvc:
-          storageClassName: storage-local-static-provisioner
+          storageClassName: nfs

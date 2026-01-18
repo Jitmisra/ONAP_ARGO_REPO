@@ -19,4 +19,4 @@
 mariadb-galera:
   mariadbOperator:
     persistence:
-      storageClassName: storage-local-static-provisioner
+      storageClassName: nfs

@@ -17,7 +17,7 @@
 # ============LICENSE_END=========================================================
 
 global:
-  defaultStorageClass: storage-local-static-provisioner
+  defaultStorageClass: nfs
   imageRegistry: docker.io
   security:
     allowInsecureImages: true

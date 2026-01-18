@@ -90,9 +90,9 @@ global:
     mountPath: /dockerdata-nfs
     enableDefaultStorageclass: false
     parameters: {}
-    storageclassProvisioner: storage-local-static-provisioner
+    storageclassProvisioner: nfs
     volumeReclaimPolicy: Retain
-    storageClass: "storage-local-static-provisioner"
+    storageClass: "nfs"
   debugEnabled: false
   passwordStrength: long
 

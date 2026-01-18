@@ -28,8 +28,8 @@ global:
   serviceMesh:
     enabled: false
   renderPullSecrets: True
-  defaultStorageClass: storage-local-static-provisioner
-  storageClass: storage-local-static-provisioner
+  defaultStorageClass: nfs
+  storageClass: nfs
 ingress:
   host: to-be-changed
 
@@ -129,7 +129,7 @@ tests:
       testName: policy-framework
   smokeTests:
     artifacts:
-      storageClassName: storage-local-static-provisioner
+      storageClassName: nfs
     execution:
       activeDeadlineSeconds: 1800
     executor:
@@ -208,7 +208,7 @@ testkube:
         runAsUser: 100
         seccompProfile:
           type: RuntimeDefault
-      storageClassName: storage-local-static-provisioner
+      storageClassName: nfs
       image:
         registry: docker.io
     nats:
@@ -277,7 +277,7 @@ testkube:
       seccompProfile:
         type: RuntimeDefault
   mongodb:
-    storageClass: storage-local-static-provisioner
+    storageClass: nfs
     image:
       registry: docker.io
     readinessProbe:
@@ -302,10 +302,10 @@ testkube:
       jetstream:
         fileStore:
           pvc:
-            storageClassName: storage-local-static-provisioner
+            storageClassName: nfs
       resolver:
         pvc:
-          storageClassName: storage-local-static-provisioner
+          storageClassName: nfs
     container:
       image:
         registry: docker.io

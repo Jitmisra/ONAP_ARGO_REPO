@@ -18,4 +18,4 @@
 
 k8ssandraOperator:
   persistence:
-    storageClassName: storage-local-static-provisioner
+    storageClassName: nfs

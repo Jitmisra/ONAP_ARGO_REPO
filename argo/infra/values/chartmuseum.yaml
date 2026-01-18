@@ -37,6 +37,6 @@ env:
     DEBUG: true
 
 persistence:
-  storageClass: storage-local-static-provisioner
+  storageClass: nfs
   enabled: true
   size: 8Gi
