@@ -34,7 +34,7 @@ spec:
   - repoURL: 'registry-1.docker.io/bitnamicharts'
     path: 'postgresql'
     chart: postgresql
-    targetRevision: 15.5.0
+    targetRevision: 13.4.0
     helm:
       helm:
       ignoreMissingValueFiles: true
