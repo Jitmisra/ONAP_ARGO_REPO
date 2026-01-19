@@ -26,5 +26,3 @@ global:
       username: dbusername
       password: dbpassword
       database: keycloak
-image:
-  tag: "16"
