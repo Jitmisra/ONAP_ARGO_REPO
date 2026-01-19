@@ -30,3 +30,6 @@ global:
 primary:
   persistence:
     storageClass: nfs
+
+image:
+  tag: "latest"
