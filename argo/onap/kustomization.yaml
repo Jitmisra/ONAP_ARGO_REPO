@@ -24,15 +24,15 @@ resources:
   - authentication/application.yaml
   - cds/application.yaml
   - cps/application.yaml
-  - dcaegen2-services/application.yaml
-  - multicloud/application.yaml
+  # - dcaegen2-services/application.yaml
+  # - multicloud/application.yaml
   - platform/application.yaml
   - policy/application.yaml
-  - portal-ng/application.yaml
+  # - portal-ng/application.yaml
   - sdc/application.yaml
   - sdnc/application.yaml
   - so/application.yaml
-  - uui/application.yaml
+  # - uui/application.yaml
   - strimzi/application.yaml
   - common/cassandra.yaml
   - common/mariadb-galera.yaml

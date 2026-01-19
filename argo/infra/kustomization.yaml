@@ -24,20 +24,20 @@ resources:
   - gateway-api.yaml
   - chartmuseum.yaml
   - compile-onap.yaml
-  - kiali-operator.yaml
-  - kiali.yaml
+  # - kiali-operator.yaml
+  # - kiali.yaml
   - k8ssandra-operator.yaml
   - keycloak-db.yaml
   - keycloak.yaml
-  - jaeger.yaml
+  # - jaeger.yaml
   - mariadb-operator.yaml
   - mariadb-operator-crds.yaml
   - mongodb-operator.yaml
   - postgres-operator.yaml
   - nfs-server-provisioner.yaml
   - strimzi.yaml
-  - prometheus.yaml
+  # - prometheus.yaml
   - infra-ingress.yaml
-  - django-defectdojo.yaml
-  - trivy-dojo-report-operator.yaml
+  # - django-defectdojo.yaml
+  # - trivy-dojo-report-operator.yaml
 
