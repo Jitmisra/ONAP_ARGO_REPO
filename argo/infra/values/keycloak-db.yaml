@@ -27,4 +27,4 @@ global:
       password: dbpassword
       database: keycloak
 image:
-  tag: "16.4.0-debian-12-r7"
+  tag: "16"
